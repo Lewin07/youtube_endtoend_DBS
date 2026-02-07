@@ -1,0 +1,20 @@
+# The main pipeline for project_bundle
+
+resources:
+  pipelines:
+    bronze_silver_earthquake_etl:
+       name: Bronze_to_Silver
+       configuration:
+        catalog_name: ${var.catalog}
+       libraries:
+        - glob:
+            include: ../src/notebooks/DLT_Pipelines/Bronze_to_Silver/transformations/**
+       schema: silver
+       continuous: false
+       development: false
+       photon: true
+       channel: CURRENT
+       catalog: ${var.catalog}
+       serverless: true
+       root_path: ../src/notebooks/DLT_Pipelines/Bronze_to_Silver
+
