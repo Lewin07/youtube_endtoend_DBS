@@ -40,7 +40,7 @@ targets:
       # We explicitly deploy to /Workspace/Users/lewin30720@gmail.com to make sure we only have a single copy.
       root_path: /Workspace/youtube_endtoend_DBS
     variables:
-      catalog: youtube_pr
+      catalog: youtube_prod
       schema: prod
       warehouse_id: 74985f150a7e0d04
     permissions:
