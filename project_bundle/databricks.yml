@@ -16,6 +16,8 @@ variables:
     description: The schema to use
   warehouse_id: 
     description: WarehouseID
+  spn_id:
+    description: SPN ID
 
 targets:
   dev:
@@ -31,6 +33,8 @@ targets:
       catalog: youtube_de
       schema: dev
       warehouse_id: 74985f150a7e0d04
+      spn_id: 2fd332e4-e092-4327-badb-444402ac41aa
+
     presets:
       artifacts_dynamic_version: true
   prod:
@@ -43,6 +47,10 @@ targets:
       catalog: youtube_prod
       schema: prod
       warehouse_id: 74985f150a7e0d04
+      spn_id: 2fd332e4-e092-4327-badb-444402ac41aa
+
     permissions:
       - user_name: lewin30720@gmail.com
+        level: CAN_MANAGE
+      - group_name: earthquake_prod_writer
         level: CAN_MANAGE

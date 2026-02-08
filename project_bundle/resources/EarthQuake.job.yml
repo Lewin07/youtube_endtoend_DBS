@@ -22,6 +22,8 @@ resources:
             subscription: {}
             warehouse_id: 74985f150a7e0d04
             dashboard_id: ${resources.dashboards.eartquake_monitor.id}
+      run_as: 
+        service_principal_name: ${var.spn_id}
       queue:
         enabled: true
       parameters:
